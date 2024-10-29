@@ -152,12 +152,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "07e28edb80900c19c28f1072f2e8aeca7fa06b23cd4169cefe1af5aa3260783f"
 
 [[package]]
-name = "hermit-abi"
-version = "0.3.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
-
-[[package]]
 name = "jni"
 version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -202,18 +196,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2d80299ef12ff69b16a84bb182e3b9df68b5a91574d3d4fa6e41b65deec4df1"
 dependencies = [
  "adler2",
-]
-
-[[package]]
-name = "mio"
-version = "1.0.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "80e04d1dcff3aae0704555fe5fee3bcfaf3d1fdf8a7e521d5b9d2b42acb52cec"
-dependencies = [
- "hermit-abi",
- "libc",
- "wasi",
- "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -314,7 +296,7 @@ dependencies = [
 [[package]]
 name = "quinn"
 version = "0.11.5"
-source = "git+https://github.com/ventos/quinn.git#775826254e50a557899029a39cf9a6fcff55d75e"
+source = "git+https://github.com/ventos/quinn.git#20d12421481f9ee59c3afd4b73d67d273d9bb8cb"
 dependencies = [
  "bytes",
  "pin-project-lite",
@@ -322,7 +304,7 @@ dependencies = [
  "quinn-udp",
  "rustc-hash",
  "rustls",
- "socket2 0.5.7 (git+https://github.com/nickrum/socket2.git?rev=07b150c8930622f75f43ae7ba2af6872adea61cb)",
+ "socket2",
  "thiserror",
  "tokio",
  "tracing",
@@ -331,7 +313,7 @@ dependencies = [
 [[package]]
 name = "quinn-proto"
 version = "0.11.8"
-source = "git+https://github.com/ventos/quinn.git#775826254e50a557899029a39cf9a6fcff55d75e"
+source = "git+https://github.com/ventos/quinn.git#20d12421481f9ee59c3afd4b73d67d273d9bb8cb"
 dependencies = [
  "bytes",
  "rand",
@@ -348,12 +330,12 @@ dependencies = [
 [[package]]
 name = "quinn-udp"
 version = "0.5.6"
-source = "git+https://github.com/ventos/quinn.git#775826254e50a557899029a39cf9a6fcff55d75e"
+source = "git+https://github.com/ventos/quinn.git#20d12421481f9ee59c3afd4b73d67d273d9bb8cb"
 dependencies = [
  "cfg_aliases",
  "libc",
  "once_cell",
- "socket2 0.5.7 (git+https://github.com/nickrum/socket2.git?rev=07b150c8930622f75f43ae7ba2af6872adea61cb)",
+ "socket2",
  "tracing",
  "windows-sys 0.59.0",
 ]
@@ -595,16 +577,6 @@ dependencies = [
 [[package]]
 name = "socket2"
 version = "0.5.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce305eb0b4296696835b71df73eb912e0f1ffd2556a501fcede6e0c50349191c"
-dependencies = [
- "libc",
- "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "socket2"
-version = "0.5.7"
 source = "git+https://github.com/nickrum/socket2.git?rev=07b150c8930622f75f43ae7ba2af6872adea61cb#07b150c8930622f75f43ae7ba2af6872adea61cb"
 dependencies = [
  "libc",
@@ -696,12 +668,8 @@ checksum = "145f3413504347a2be84393cc8a7d2fb4d863b375909ea59f2158261aa258bbb"
 dependencies = [
  "backtrace",
  "bytes",
- "libc",
- "mio",
  "pin-project-lite",
- "socket2 0.5.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "tokio-macros",
- "windows-sys 0.52.0",
 ]
 
 [[package]]
