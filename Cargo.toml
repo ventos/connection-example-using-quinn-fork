@@ -7,6 +7,6 @@ edition = "2021"
 
 [dependencies]
 quinn = { git = "https://github.com/ventos/quinn.git" }
-tokio = { version = "1.41.0", features = ["full"] }
+tokio = { version = "1.41.0", features = ["sync","macros","io-util","rt","time"] }
 rustls = { version = "0.23.5", default-features = false, features = ["std"] }
 rcgen = "0.13"

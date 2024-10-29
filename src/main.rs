@@ -11,7 +11,7 @@ use std::{
 mod common;
 use common::{make_client_endpoint, make_server_endpoint};
 
-#[tokio::main]
+#[tokio::main(flavor = "current_thread")]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     let server_addr = SocketAddr::new(IpAddr::V4(Ipv4Addr::LOCALHOST), 5000);
     let (endpoint, server_cert) = make_server_endpoint(server_addr)?;
