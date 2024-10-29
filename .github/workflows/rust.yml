@@ -19,4 +19,7 @@ jobs:
     - name: Build
       run: cargo build --verbose
     - name: Build WASM-wasip2
-      run: cargo build --verbose --release --target wasm32-wasip2
+      run: |
+        rustup override set nightly
+        rustup target add wasm32-wasip2
+        cargo +nightly build --verbose --release --target wasm32-wasip2
